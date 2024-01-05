@@ -23,7 +23,6 @@ This dashboard comes equipped with two essential variables for flexible configur
 ## Getting Started
 
 1. **Installation:**
-   - Install Prometheus as the data source for your metrics collection.
    - Install Grafana on your server.
    - Import the provided JSON dashboard configuration into Grafana.
 
@@ -36,7 +35,6 @@ This dashboard comes equipped with two essential variables for flexible configur
   
 ## Requirements
 
-- Prometheus
 - Grafana (version 10.2.2 or later)
 
 ## Contributing
