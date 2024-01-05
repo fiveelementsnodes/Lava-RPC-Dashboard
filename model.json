@@ -724,7 +724,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -803,12 +804,16 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"LAV1\", instance=\"$instance_ip:$metrics_port\"}[1m]))",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"LAV1\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "fullMetaSearch": false,
           "hide": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "LAV RATE",
@@ -831,7 +836,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -981,7 +987,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1036,6 +1043,30 @@
                 }
               }
             ]
+          },
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "jsonrpc"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
           }
         ]
       },
@@ -1064,11 +1095,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"EVMOS\", instance=\"$instance_ip:$metrics_port\"}[1m]))",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"EVMOS\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "EVMOS RATE",
@@ -1091,7 +1126,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1241,7 +1277,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1324,11 +1361,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"EVMOST\", instance=\"$instance_ip:$metrics_port\"}[1m]))",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"EVMOST\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "EVMOST RATE",
@@ -1351,7 +1392,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1500,7 +1542,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1552,11 +1595,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"NEAR\", instance=\"$instance_ip:$metrics_port\"}[1m])",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"NEAR\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "NEAR RATE",
@@ -1579,7 +1626,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1728,7 +1776,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1780,11 +1829,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"NEART\", instance=\"$instance_ip:$metrics_port\"}[1m])",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"NEART\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "NEART RATE",
@@ -1807,7 +1860,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1956,7 +2010,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2023,11 +2078,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"AXELAR\", instance=\"$instance_ip:$metrics_port\"}[1m])",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"AXELAR\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "AXELAR RATE",
@@ -2050,7 +2109,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2199,7 +2259,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2266,11 +2327,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"AXELART\", instance=\"$instance_ip:$metrics_port\"}[1m])",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"AXELART\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "AXELART RATE",
@@ -2293,7 +2358,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2443,7 +2509,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2495,11 +2562,15 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRK\", instance=\"$instance_ip:$metrics_port\"}[1m])",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRK\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "STRK RATE",
@@ -2522,7 +2593,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2674,7 +2746,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -2707,12 +2780,16 @@
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "editorMode": "code",
-          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"OPTM\", instance=\"$instance_ip:$metrics_port\"}[1m]))",
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"OPTM\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "fullMetaSearch": false,
           "hide": false,
+          "includeNullMetadata": true,
           "legendFormat": "{{apiInterface}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "OPTM RATE",
@@ -2735,7 +2812,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2838,7 +2916,7 @@
       "type": "stat"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2846,223 +2924,228 @@
         "y": 82
       },
       "id": 53,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "z1Pbbo1Vk"
+      "panels": [],
+      "title": "Inactive nodes rate",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "z1Pbbo1Vk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "smooth",
-                "lineWidth": 1,
-                "pointSize": 1,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
+              {
+                "color": "red",
+                "value": 80
               }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 21,
-            "x": 0,
-            "y": 83
-          },
-          "id": 14,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "z1Pbbo1Vk"
-              },
-              "editorMode": "code",
-              "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[1m])",
-              "legendFormat": "{{apiInterface}}",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "STRKT RATE",
-          "transparent": true,
-          "type": "timeseries"
+            ]
+          }
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 21,
+        "x": 0,
+        "y": 83
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "reqps"
-            },
-            "overrides": [
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{apiInterface}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "STRKT RATE",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "z1Pbbo1Vk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
               {
-                "matcher": {
-                  "id": "byName",
-                  "options": "jsonrpc"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "red",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
+                "color": "green",
+                "value": null
               },
               {
-                "matcher": {
-                  "id": "byName",
-                  "options": "rest"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "orange",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "tendermintrpc"
-                },
-                "properties": [
-                  {
-                    "id": "color",
-                    "value": {
-                      "fixedColor": "blue",
-                      "mode": "fixed"
-                    }
-                  }
-                ]
+                "color": "red",
+                "value": 80
               }
             ]
           },
-          "gridPos": {
-            "h": 7,
-            "w": 3,
-            "x": 21,
-            "y": 83
-          },
-          "id": 50,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "none",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "max"
-              ],
-              "fields": "",
-              "values": false
+          "unit": "reqps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "jsonrpc"
             },
-            "textMode": "auto",
-            "wideLayout": true
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
           },
-          "pluginVersion": "10.2.2",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "z1Pbbo1Vk"
-              },
-              "disableTextWrap": false,
-              "editorMode": "builder",
-              "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
-              "fullMetaSearch": false,
-              "includeNullMetadata": true,
-              "legendFormat": "{{apiInterface}}",
-              "range": true,
-              "refId": "A",
-              "useBackend": false
-            }
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rest"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "tendermintrpc"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 21,
+        "y": 83
+      },
+      "id": 50,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "max"
           ],
-          "title": "STARKNET T RATE PEAK",
-          "transparent": true,
-          "type": "stat"
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{apiInterface}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
         }
       ],
-      "title": "Inactive nodes rate",
-      "type": "row"
+      "title": "STARKNET T RATE PEAK",
+      "transparent": true,
+      "type": "stat"
     }
   ],
   "refresh": "5s",
@@ -3116,13 +3199,13 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Lava Provider",
   "uid": "7EA0ITRIk",
-  "version": 88,
+  "version": 89,
   "weekStart": ""
 }
