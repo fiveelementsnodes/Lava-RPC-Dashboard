@@ -43,4 +43,4 @@ This dashboard comes equipped with two essential variables for flexible configur
 
 If you have suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request. Contributions are highly welcome!
 
-<img src="https://www.5elementsnodes.com/wp-content/uploads/2023/12/LOGO-1.png" width="20%">
+<img src="https://www.5elementsnodes.com/wp-content/uploads/2023/12/LOGO-1.png" width="30%">
