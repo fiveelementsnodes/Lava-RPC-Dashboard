@@ -46,12 +46,238 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<img width=\"200px\" src=\"https://www.5elementsnodes.com/wp-content/uploads/2023/12/LOGO-1.png\" /><img width=\"50px\" src=\"https://emojigraph.org/media/apple/volcano_1f30b.png\" />",
+        "content": "<img width=\"50px\" src=\"https://emojigraph.org/media/apple/volcano_1f30b.png\" />  <img width=\"200px\" src=\"https://www.5elementsnodes.com/wp-content/uploads/2023/12/LOGO-1.png\" />",
         "mode": "html"
       },
       "pluginVersion": "10.2.2",
       "transparent": true,
       "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 56,
+      "panels": [],
+      "title": "Provider Cache",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "z1Pbbo1Vk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 20,
+        "x": 0,
+        "y": 3
+      },
+      "id": 54,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "sum by(chain_id, result) (cache_api_specifics{instance=\"$cache_ip:$cache_port\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{chain_id}}_{{result}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Cache Count",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "z1Pbbo1Vk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 4,
+        "x": 20,
+        "y": 3
+      },
+      "id": 55,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "percent",
+            "value"
+          ]
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "cache_total_hits{instance=\"$cache_ip:$cache_port\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{total_hits}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
+          },
+          "editorMode": "code",
+          "expr": "cache_total_misses{instance=\"$cache_ip:$cache_port\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{total_misses}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Cache Stats",
+      "transparent": true,
+      "type": "piechart"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 57,
+      "panels": [],
+      "title": "Provider Info",
+      "type": "row"
     },
     {
       "datasource": {
@@ -84,7 +310,7 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 2
+        "y": 14
       },
       "id": 34,
       "links": [],
@@ -121,7 +347,7 @@
           "useBackend": false
         }
       ],
-      "title": "PROVIDER ERROR",
+      "title": "Errors",
       "transparent": true,
       "type": "stat"
     },
@@ -154,7 +380,7 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 16
       },
       "id": 10,
       "options": {
@@ -224,7 +450,7 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 18
       },
       "id": 12,
       "options": {
@@ -301,7 +527,7 @@
         "h": 4,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 20
       },
       "id": 20,
       "options": {
@@ -379,7 +605,7 @@
         "h": 4,
         "w": 8,
         "x": 0,
-        "y": 12
+        "y": 24
       },
       "id": 26,
       "options": {
@@ -460,7 +686,7 @@
         "h": 4,
         "w": 8,
         "x": 8,
-        "y": 12
+        "y": 24
       },
       "id": 24,
       "options": {
@@ -537,7 +763,7 @@
         "h": 4,
         "w": 8,
         "x": 16,
-        "y": 12
+        "y": 24
       },
       "id": 22,
       "options": {
@@ -618,7 +844,7 @@
         "h": 2,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 28
       },
       "id": 36,
       "options": {
@@ -664,7 +890,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 30
       },
       "id": 52,
       "panels": [],
@@ -783,7 +1009,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 19
+        "y": 31
       },
       "id": 6,
       "options": {
@@ -899,7 +1125,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 19
+        "y": 31
       },
       "id": 40,
       "options": {
@@ -1074,7 +1300,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 26
+        "y": 38
       },
       "id": 18,
       "options": {
@@ -1189,7 +1415,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 26
+        "y": 38
       },
       "id": 43,
       "options": {
@@ -1340,7 +1566,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 33
+        "y": 45
       },
       "id": 16,
       "options": {
@@ -1455,7 +1681,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 33
+        "y": 45
       },
       "id": 44,
       "options": {
@@ -1574,7 +1800,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 40
+        "y": 52
       },
       "id": 38,
       "options": {
@@ -1689,7 +1915,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 40
+        "y": 52
       },
       "id": 45,
       "options": {
@@ -1801,6 +2027,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "jsonrpc"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1808,7 +2049,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 47
+        "y": 59
       },
       "id": 39,
       "options": {
@@ -1923,7 +2164,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 47
+        "y": 59
       },
       "id": 46,
       "options": {
@@ -2057,7 +2298,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 54
+        "y": 66
       },
       "id": 30,
       "options": {
@@ -2172,7 +2413,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 54
+        "y": 66
       },
       "id": 47,
       "options": {
@@ -2306,7 +2547,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 61
+        "y": 73
       },
       "id": 32,
       "options": {
@@ -2421,7 +2662,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 61
+        "y": 73
       },
       "id": 48,
       "options": {
@@ -2541,7 +2782,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 68
+        "y": 80
       },
       "id": 37,
       "options": {
@@ -2656,7 +2897,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 68
+        "y": 80
       },
       "id": 49,
       "options": {
@@ -2759,7 +3000,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 75
+        "y": 87
       },
       "id": 4,
       "options": {
@@ -2875,7 +3116,7 @@
         "h": 7,
         "w": 3,
         "x": 21,
-        "y": 75
+        "y": 87
       },
       "id": 51,
       "options": {
@@ -2916,239 +3157,240 @@
       "type": "stat"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 94
       },
       "id": 53,
-      "panels": [],
-      "title": "Inactive nodes rate",
-      "type": "row"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "z1Pbbo1Vk"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
           },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "smooth",
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "decimals": 0,
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
             },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 1,
-            "scaleDistribution": {
-              "type": "linear"
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 21,
+            "x": 0,
+            "y": 6
+          },
+          "id": 14,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
             },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
             }
           },
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "z1Pbbo1Vk"
               },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 21,
-        "x": 0,
-        "y": 83
-      },
-      "id": 14,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "z1Pbbo1Vk"
-          },
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "legendFormat": "{{apiInterface}}",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        }
-      ],
-      "title": "STRKT RATE",
-      "transparent": true,
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "z1Pbbo1Vk"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "reqps"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "jsonrpc"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "rest"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "tendermintrpc"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 3,
-        "x": 21,
-        "y": 83
-      },
-      "id": 50,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "max"
+              "disableTextWrap": false,
+              "editorMode": "builder",
+              "expr": "rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval])",
+              "fullMetaSearch": false,
+              "includeNullMetadata": true,
+              "legendFormat": "{{apiInterface}}",
+              "range": true,
+              "refId": "A",
+              "useBackend": false
+            }
           ],
-          "fields": "",
-          "values": false
+          "title": "STRKT RATE",
+          "transparent": true,
+          "type": "timeseries"
         },
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "10.2.2",
-      "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "z1Pbbo1Vk"
           },
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "legendFormat": "{{apiInterface}}",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "decimals": 0,
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "reqps"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "jsonrpc"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "red",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "rest"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "orange",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "tendermintrpc"
+                },
+                "properties": [
+                  {
+                    "id": "color",
+                    "value": {
+                      "fixedColor": "blue",
+                      "mode": "fixed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 3,
+            "x": 21,
+            "y": 6
+          },
+          "id": 50,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "max"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "z1Pbbo1Vk"
+              },
+              "disableTextWrap": false,
+              "editorMode": "builder",
+              "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"STRKT\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+              "fullMetaSearch": false,
+              "includeNullMetadata": true,
+              "legendFormat": "{{apiInterface}}",
+              "range": true,
+              "refId": "A",
+              "useBackend": false
+            }
+          ],
+          "title": "STARKNET T RATE PEAK",
+          "transparent": true,
+          "type": "stat"
         }
       ],
-      "title": "STARKNET T RATE PEAK",
-      "transparent": true,
-      "type": "stat"
+      "title": "Inactive nodes rate",
+      "type": "row"
     }
   ],
-  "refresh": "5s",
+  "refresh": "10s",
   "schemaVersion": 38,
   "tags": [
     "RPC",
@@ -3195,17 +3437,51 @@
         "query": "7779",
         "skipUrlSync": false,
         "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "127.0.0.1",
+          "value": "127.0.0.1"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Cache instance IP",
+        "multi": false,
+        "name": "cache_ip",
+        "options": [],
+        "query": "",
+        "queryValue": "127.0.0.1",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "7777",
+          "value": "7777"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Cache metrics port",
+        "multi": false,
+        "name": "cache_port",
+        "options": [],
+        "query": "",
+        "queryValue": "7777",
+        "skipUrlSync": false,
+        "type": "custom"
       }
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Lava Provider",
   "uid": "7EA0ITRIk",
-  "version": 89,
+  "version": 96,
   "weekStart": ""
 }
