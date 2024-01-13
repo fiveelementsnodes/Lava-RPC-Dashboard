@@ -137,6 +137,7 @@
         "y": 3
       },
       "id": 54,
+      "maxDataPoints": 2128,
       "options": {
         "legend": {
           "calcs": [],
@@ -1128,6 +1129,7 @@
         "y": 31
       },
       "id": 40,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -1418,6 +1420,7 @@
         "y": 38
       },
       "id": 43,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -1684,6 +1687,7 @@
         "y": 45
       },
       "id": 44,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -1789,6 +1793,21 @@
                 "id": "color",
                 "value": {
                   "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "jsonrpc"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
                   "mode": "fixed"
                 }
               }
@@ -1918,6 +1937,7 @@
         "y": 52
       },
       "id": 45,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -2167,6 +2187,7 @@
         "y": 59
       },
       "id": 46,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -2416,6 +2437,7 @@
         "y": 66
       },
       "id": 47,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -2665,6 +2687,7 @@
         "y": 73
       },
       "id": 48,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -2900,6 +2923,7 @@
         "y": 80
       },
       "id": 49,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -3119,6 +3143,7 @@
         "y": 87
       },
       "id": 51,
+      "maxDataPoints": 2128,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -3230,7 +3255,7 @@
             "h": 7,
             "w": 21,
             "x": 0,
-            "y": 6
+            "y": 95
           },
           "id": 14,
           "options": {
@@ -3345,9 +3370,10 @@
             "h": 7,
             "w": 3,
             "x": 21,
-            "y": 6
+            "y": 95
           },
           "id": 50,
+          "maxDataPoints": 2128,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -3390,7 +3416,7 @@
       "type": "row"
     }
   ],
-  "refresh": "10s",
+  "refresh": "1m",
   "schemaVersion": 38,
   "tags": [
     "RPC",
@@ -3482,6 +3508,6 @@
   "timezone": "",
   "title": "Lava Provider",
   "uid": "7EA0ITRIk",
-  "version": 96,
+  "version": 98,
   "weekStart": ""
 }
