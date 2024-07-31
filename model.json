@@ -1058,7 +1058,7 @@
           "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"LAV1\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
           "hide": false,
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{apiInterface}}",
           "range": true,
           "refId": "B"
         }
@@ -1182,6 +1182,19 @@
           "range": true,
           "refId": "A",
           "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "z1Pbbo1Vk"
+          },
+          "editorMode": "code",
+          "expr": "sum by(apiInterface) (rate(lava_provider_total_cu_serviced{spec=\"LAV1\", instance=\"$instance_ip:$metrics_port\"}[$__rate_interval]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{apiInterface}}",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "LAVA RATE PEAK",
@@ -2046,7 +2059,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2144,7 +2158,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2295,7 +2310,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2393,7 +2409,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2544,7 +2561,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2642,7 +2660,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2794,7 +2813,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2877,7 +2897,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3031,7 +3052,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -3096,7 +3118,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3532,6 +3555,6 @@
   "timezone": "",
   "title": "Lava Mainnet Provider",
   "uid": "7EA0ITRIkM",
-  "version": 9,
+  "version": 14,
   "weekStart": ""
 }
